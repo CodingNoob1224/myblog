@@ -2,7 +2,7 @@ name: Deploy Hugo to GitHub Pages
 
 on:
   push:
-    branches: [main]  # 或改成你自己的主分支名稱
+    branches: [master]  # 或改成你自己的主分支名稱
 
 jobs:
   build-deploy:
