@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on CodingNoob 的部落格</title><link>https://CodingNoob1224.github.io/tags/hugo/</link><description>Recent content in Hugo on CodingNoob 的部落格</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Tue, 17 Jun 2025 00:00:00 +0800</lastBuildDate><atom:link href="https://CodingNoob1224.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>用 Hugo 架設個人部落格的完整流程</title><link>https://CodingNoob1224.github.io/tech-notes/%E7%94%A8-hugo-%E6%9E%B6%E8%A8%AD%E5%80%8B%E4%BA%BA%E9%83%A8%E8%90%BD%E6%A0%BC%E7%9A%84%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B/</link><pubDate>Tue, 17 Jun 2025 00:00:00 +0800</pubDate><guid>https://CodingNoob1224.github.io/tech-notes/%E7%94%A8-hugo-%E6%9E%B6%E8%A8%AD%E5%80%8B%E4%BA%BA%E9%83%A8%E8%90%BD%E6%A0%BC%E7%9A%84%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B/</guid><description>&lt;p>這篇文章紀錄我如何使用 Hugo 架設一個屬於自己的技術部落格，用來記錄 side projects、實習筆記與學習心得。&lt;/p>
+&lt;hr>
+&lt;h2 id="-使用工具">🧰 使用工具
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Hugo&lt;/strong>：靜態部落格產生器&lt;/li>
+&lt;li>&lt;strong>Stack 主題&lt;/strong>：&lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
+>https://github.com/CaiJimmy/hugo-theme-stack&lt;/a>&lt;/li>
+&lt;li>&lt;strong>GitHub Pages&lt;/strong>：未來部署用&lt;/li>
+&lt;li>&lt;strong>VS Code&lt;/strong>：寫文章用&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-建置步驟">⚙️ 建置步驟
+&lt;/h2>&lt;h3 id="1-安裝-hugo-extended">1️⃣ 安裝 Hugo Extended
+&lt;/h3>&lt;ol>
+&lt;li>
+&lt;p>到 Hugo 官方 GitHub 頁面下載 Extended 版本：&lt;br>
+&lt;a class="link" href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener"
+>https://github.com/gohugoio/hugo/releases&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>解壓縮，把 &lt;code>hugo.exe&lt;/code> 放進環境變數路徑（例如 &lt;code>C:\Windows&lt;/code>）&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>開啟終端機輸入：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>hugo version
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>有出現 &lt;code>/extended&lt;/code> 表示成功。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h3 id="2-建立新-hugo-專案">2️⃣ 建立新 Hugo 專案
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>hugo new site myblog
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd myblog
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="3-安裝-stack-主題">3️⃣ 安裝 Stack 主題
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git init
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git submodule add https://github.com/CaiJimmy/hugo-theme-stack themes/hugo-theme-stack
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="4-設定-configtoml">4️⃣ 設定 config.toml
+&lt;/h3>&lt;p>將根目錄的 &lt;code>config.toml&lt;/code> 修改如下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-toml" data-lang="toml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">baseURL&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;https://CodingNoob1224.github.io/&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">languageCode&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;zh-tw&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">title&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;CodingNoob 的部落格&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">theme&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;hugo-theme-stack&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[&lt;span style="color:#a6e22e">pagination&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">pagerSize&lt;/span> = &lt;span style="color:#ae81ff">5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">defaultContentLanguage&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;zh-tw&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">hasCJKLanguage&lt;/span> = &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[&lt;span style="color:#a6e22e">permalinks&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">side-projects&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;/side-projects/:slug/&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">intern-notes&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;/intern-notes/:slug/&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">tech-notes&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;/tech-notes/:slug/&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[&lt;span style="color:#a6e22e">params&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">mainSections&lt;/span> = [&lt;span style="color:#e6db74">&amp;#39;side-projects&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;intern-notes&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;tech-notes&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#a6e22e">params&lt;/span>.&lt;span style="color:#a6e22e">footer&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">since&lt;/span> = &lt;span style="color:#ae81ff">2025&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">customText&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;由 CodingNoob 製作&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#a6e22e">params&lt;/span>.&lt;span style="color:#a6e22e">sidebar&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">subtitle&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;Side Projects · 實習紀錄 · 技術筆記&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#a6e22e">params&lt;/span>.&lt;span style="color:#a6e22e">article&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">showToc&lt;/span> = &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">tocPosition&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;right&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">showReadingTime&lt;/span> = &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">showWordCount&lt;/span> = &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[&lt;span style="color:#a6e22e">menu&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [[&lt;span style="color:#a6e22e">menu&lt;/span>.&lt;span style="color:#a6e22e">main&lt;/span>]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">identifier&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;sideprojects&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">name&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;專案紀錄&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">url&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;/side-projects/&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [[&lt;span style="color:#a6e22e">menu&lt;/span>.&lt;span style="color:#a6e22e">main&lt;/span>]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">identifier&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;intern&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">name&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;實習筆記&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">url&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;/intern-notes/&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [[&lt;span style="color:#a6e22e">menu&lt;/span>.&lt;span style="color:#a6e22e">main&lt;/span>]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">identifier&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;tech&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">name&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;技術筆記&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">url&lt;/span> = &lt;span style="color:#e6db74">&amp;#39;/tech-notes/&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="5-建立第一篇文章">5️⃣ 建立第一篇文章
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>hugo new tech-notes/hugo-setup-guide.md
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>並確認該檔案開頭的 &lt;code>draft: false&lt;/code>，才會在網頁中顯示。&lt;/p>
+&lt;hr>
+&lt;h3 id="6-啟動本地伺服器">6️⃣ 啟動本地伺服器
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>hugo server -D
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然後瀏覽器開啟：&lt;/p>
+&lt;pre tabindex="0">&lt;code>http://localhost:1313/
+&lt;/code>&lt;/pre>&lt;hr>
+&lt;h2 id="-使用心得">🖋️ 使用心得
+&lt;/h2>&lt;p>我覺得 Hugo 的架設流程比想像中簡單，Extended 版支援 SCSS，搭配 Stack 主題整體畫面現代又清爽。&lt;br>
+未來我會進一步整合 GitHub Pages 自動部署，持續更新 Side Projects 與實習紀錄。&lt;/p>
+&lt;hr>
+&lt;p>📌 最後，只要執行以下指令就能預覽整站內容：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>hugo server -D
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
