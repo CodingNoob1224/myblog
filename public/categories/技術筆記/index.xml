@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>技術筆記 on CodingNoob 的部落格</title>
+        <link>http://localhost:1313/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/</link>
+        <description>Recent content in 技術筆記 on CodingNoob 的部落格</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <lastBuildDate>Tue, 17 Jun 2025 00:00:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>用 Hugo 架設個人部落格的完整流程</title>
+        <link>http://localhost:1313/tech-notes/%E7%94%A8-hugo-%E6%9E%B6%E8%A8%AD%E5%80%8B%E4%BA%BA%E9%83%A8%E8%90%BD%E6%A0%BC%E7%9A%84%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B/</link>
+        <pubDate>Tue, 17 Jun 2025 00:00:00 +0800</pubDate>
+        
+        <guid>http://localhost:1313/tech-notes/%E7%94%A8-hugo-%E6%9E%B6%E8%A8%AD%E5%80%8B%E4%BA%BA%E9%83%A8%E8%90%BD%E6%A0%BC%E7%9A%84%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B/</guid>
+        <description>&lt;p&gt;這篇文章紀錄我如何使用 Hugo 架設一個屬於自己的技術部落格，用來記錄 side projects、實習筆記與學習心得。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-使用工具&#34;&gt;🧰 使用工具
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Hugo&lt;/strong&gt;：靜態部落格產生器&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stack 主題&lt;/strong&gt;：現代且美觀的主題 &lt;a class=&#34;link&#34; href=&#34;https://github.com/CaiJimmy/hugo-theme-stack&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GitHub Pages&lt;/strong&gt;：免費部署平台（未來會設定）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;VS Code&lt;/strong&gt;：撰寫 Markdown 文章&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-建置步驟&#34;&gt;⚙️ 建置步驟
+&lt;/h2&gt;&lt;h3 id=&#34;1-安裝-hugo-extended&#34;&gt;1️⃣ 安裝 Hugo Extended
+&lt;/h3&gt;&lt;p&gt;因為 Stack 主題需要支援 SCSS，所以必須安裝 Hugo Extended 版：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;到 Hugo 官方 GitHub Releases 頁面下載 extended 版本：&lt;br&gt;
+👉 &lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio/hugo/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/gohugoio/hugo/releases&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;解壓縮後，將 &lt;code&gt;hugo.exe&lt;/code&gt; 放到環境變數路徑中。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;確認版本：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo version
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;顯示 &amp;hellip;/extended 即安裝成功。&lt;/p&gt;
+&lt;p&gt;2️⃣ 建立新 Hugo 專案
+bash
+複製
+編輯
+hugo new site myblog
+cd myblog
+3️⃣ 安裝 Stack 主題
+bash
+複製
+編輯
+git init
+git submodule add &lt;a class=&#34;link&#34; href=&#34;https://github.com/CaiJimmy/hugo-theme-stack&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/CaiJimmy/hugo-theme-stack&lt;/a&gt; themes/hugo-theme-stack
+4️⃣ 設定 config.toml
+將 hugo.toml 改名為 config.toml，並修改為以下設定（範例）：&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

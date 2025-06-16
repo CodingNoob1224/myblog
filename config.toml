@@ -1,0 +1,46 @@
+baseURL = 'https://CodingNoob1224.github.io/'
+languageCode = 'zh-tw'
+title = 'CodingNoob 的部落格'
+theme = 'hugo-theme-stack'
+[pagination]
+  pagerSize = 5
+defaultContentLanguage = 'zh-tw'
+hasCJKLanguage = true
+
+[permalinks]
+  side-projects = '/side-projects/:slug/'
+  intern-notes = '/intern-notes/:slug/'
+  tech-notes = '/tech-notes/:slug/'
+
+[params]
+  mainSections = ['side-projects', 'intern-notes', 'tech-notes']
+
+  [params.footer]
+    since = 2025
+    customText = '由 CodingNoob 製作'
+
+  [params.sidebar]
+    subtitle = 'Side Projects · 實習紀錄 · 技術筆記'
+
+  [params.article]
+    showToc = true
+    tocPosition = 'right'
+    showReadingTime = true
+    showWordCount = true
+
+[menu]
+
+  [[menu.main]]
+    identifier = 'sideprojects'
+    name = '專案紀錄'
+    url = '/side-projects/'
+
+  [[menu.main]]
+    identifier = 'intern'
+    name = '實習筆記'
+    url = '/intern-notes/'
+
+  [[menu.main]]
+    identifier = 'tech'
+    name = '技術筆記'
+    url = '/tech-notes/'
